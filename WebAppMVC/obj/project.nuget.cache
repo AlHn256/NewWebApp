@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OlJoMHi2NSppVm4UWjeIRFIDEhrsDz6qcnLiT7SMe2vy9u8DvTnQjrLwP1Acecr/RwqV0Nk1pRblv5T2bW3BnA==",
+  "success": true,
+  "projectFilePath": "C:\\C#\\WebAppMVC\\WebAppMVC\\WebAppMVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\npgsql\\7.0.2\\npgsql.7.0.2.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

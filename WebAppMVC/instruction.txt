@@ -1,0 +1,49 @@
+Во первых сначала лучше всего проверить есть ли у вас доступ к самому сайту с Jsonом
+https://www.tutorialstonight.com/lib/examples/students.json
+
+В Postgres создаем БД и таблицу с помощью скиптов (admin напротив OWNER нужно будет заменить на пользователя имющего доступ к БД)
+
+--Скрипт создания БД
+
+CREATE DATABASE "Test"
+    WITH
+    OWNER = admin
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+--Скрипт создания таблицы
+
+CREATE TABLE new_table
+(
+  studentname character varying(50),
+  math character varying(50),
+  english character varying(50),
+  chemistry character varying(50),
+  physics character varying(50)
+)
+WITH (OIDS=FALSE);
+ALTER TABLE test_table OWNER TO admin;
+
+
+Затем нужно открыть файл appsettings.json любым текстовым редактором в разделе ConnectionString настроить подключение к БД
+пример:
+  "ConnectionString": {
+    "Server": "127.0.0.1", 		--адресс на котором работает Postgres, если это локальный сервер то "127.0.0.1" должно сработать
+    "Port": "5432",				-- порт 
+    "UserId": "admin",			-- логин пользовател
+    "Password": "admin",		-- пароль
+    "Database": "Test"			-- название БД (должно совпадать с названием БД первого скрипта)
+  },
+			
+			String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    "127.0.0.1", "5432", "admin",
+                    "admin", "Test");
+					
+
+После запускаем приложения. (возможно при зпуске нужно будет согластися и разрешить принять новый сертификат, по кнопке дополнительно)
+В открывшемся браузере нажимаем "Get and Save Json"
+Скачивается Json и добавляется в таблицу БД
+
+
